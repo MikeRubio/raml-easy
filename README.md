@@ -1,4 +1,4 @@
-# raml2 README
+# RAML Easy README
 
 This snnipet will help you code faster and better RAML files.
 
@@ -6,12 +6,11 @@ This snnipet will help you code faster and better RAML files.
 
 Snnipets for all your needs:
 
-\!\[endpoint\]\(images/endpoint.png\)
+![alt text](images/ramlpic.png "RAML starter")
 
-\!\[Response codes\]\(images/200.png\)
+![alt text](images/endpoint.png "endpoint snnipet")
 
-\!\[Raml top\]\(images/ramlpic.png\)
-
+![alt text](images/200.png "response codes")
 
 ## Release Notes
 
