@@ -12,7 +12,6 @@ Snnipets for all your needs:
 
 ![alt text](images/200.png "response codes")
 
-![alt text](images/200.png "response codes")
 
 ## Release Notes
 
