@@ -28,7 +28,8 @@ Including RAML Top, Response codes, Endpoints and more.
 
 ## Working with Markdown
 
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets.
+* The language has to be set to YAML which is the base from RAML.
 
 ### For more information
 
