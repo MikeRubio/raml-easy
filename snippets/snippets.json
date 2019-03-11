@@ -1,0 +1,34 @@
+{
+    "RAML Top": {
+        "prefix": "raml",
+        "body": [
+            "#%RAML 1.0",
+            "",
+            "title: ${1:Tile}",
+            "version: ${2:version}",
+            "baseUri: http://myapi.mysite.com/api/${2:version}",
+            "mediaType: [ application/json, application/xml ]",
+            "$0"
+        ],
+        "description": "Creates the top part of the raml"
+    },
+    "RAML Endpoint": {
+        "prefix": "endpoint",
+        "body": [
+        "/${1:title}:",
+        "  ${2|get,put,delete|}:",
+        "    description:",
+        "    responses:",
+        "      200:",
+        "        body:",
+        "          application/json:",
+        "            example: |",
+        "      404:",
+        "        body:",
+        "          application/json:",
+        "            example: |",
+        "$0"
+        ],
+        "description": "Creates an End Point with variable methods. 200 and 404 responses included"
+    }
+}
