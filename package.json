@@ -2,6 +2,11 @@
     "name": "raml-easy",
     "displayName": "RAML easy",
     "description": "easy way to raml",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MikeRubio/raml-easy"
+    },
+    "icon": "raml.png",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.32.0"
@@ -12,12 +17,8 @@
     "contributes": {
         "snippets": [
             {
-                "language": "raml",
+                "language": "yaml",
                 "path": "./snippets/snippets.json"
-            },
-            {
-                "language": "raml",
-                "path": "./snippets/snippets-method.json"
             }
         ]
     }

@@ -1,6 +1,7 @@
 {
     "RAML Top": {
         "prefix": "raml",
+        "scope": "raml",
         "body": [
             "#%RAML 1.0",
             "",
@@ -14,6 +15,7 @@
     },
     "RAML Endpoint": {
         "prefix": "endpoint",
+        "scope": "raml",
         "body": [
         "/${1:title}:",
         "  ${2|get,put,delete|}:",
@@ -30,5 +32,190 @@
         "$0"
         ],
         "description": "Creates an End Point with variable methods. 200 and 404 responses included"
+    },
+    "RAML Method POST": {
+        "prefix": "post",
+        "scope": "raml",
+        "body": [
+            "post:",
+            "description:" ,
+            "$0",
+            "body:",
+            "  type:",
+            "  example:",
+            "responses:",
+            "  201:",
+            "    description: The request has been fulfilled",
+            "    body:",
+            "  404:",
+            "    description: The server has not found anything matching the request URI",
+            "    body:",
+            "      type: ErrorSchema"
+        ],
+        "description": "Creates a POST with responses"
+    },
+    "RAML Method GET": {
+        "prefix": "get",
+        "scope": "raml",
+        "body": [
+            "get:",
+            "description:" ,
+            "$0",
+            "body:",
+            "  type:",
+            "  example:",
+            "responses:",
+            "  200:",
+            "    description: There are no errors, the request has been successful",
+            "    body: ",
+            "  404:",
+            "    description: The server has not found anything matching the request URI",
+            "    body:",
+            "      type: ErrorSchema"
+        ],
+        "description": "Creates a POST with responses"
+    },
+    "RAML Method PUT": {
+        "prefix": "put",
+        "scope": "raml",
+        "body": [
+            "put:",
+            "description:" ,
+            "$0",
+            "body:",
+            "  type:",
+            "  example:",
+            "responses:",
+            "  200:",
+            "    description: There are no errors, the request has been successful",
+            "    body:",
+            "  404:",
+            "    description: The server has not found anything matching the request URI",
+            "    body:",
+            "      type: ErrorSchema"
+        ],
+        "description": "Creates a PUT with responses"
+    },
+    "RAML Response 200": {
+        "prefix": "200",
+        "scope": "raml",
+        "body": [
+            "200:",
+            "    description: There are no errors, the request has been successful",
+            "    body: $0"
+        ],
+        "description": "Response 200. There are no errors, the request has been successful"
+    },
+    "RAML Response 202": {
+        "prefix": "202",
+        "scope": "raml",
+        "body": [
+            "202:",
+            "  description: The request has been accepted for processing",
+            "    body: $0"
+        ],
+        "description": "Response 202. The request has been accepted for processing"
+    },
+        "RAML Response 204": {
+        "prefix": "204",
+        "scope": "raml",
+        "body": [
+            "  204:",
+            "    description: There are no errors, the request has been processed and no contact is expected in the body",
+            "    body: $0"
+        ],
+        "description": "Response 204. There are no errors, the request has been processed and no contact is expected in the body"
+    },
+    "RAML Response 400": {
+        "prefix": "400",
+        "scope": "raml",
+        "body": [
+            "  400:",
+            "    description: The request could not be understood by the server",
+            "    body: $0",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 400. The request could not be understood by the server"
+    },
+    "RAML Response 401": {
+        "prefix": "401",
+        "scope": "raml",
+        "body": [
+            "  401:",
+            "    description: The request requires user authentication",
+            "    body: $0",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 401. The request requires user authentication"
+    },
+    "RAML Response 404": {
+        "prefix": "404",
+        "scope": "raml",
+        "body": [
+            "  404:",
+            "    description: The server has not found anything matching the request URI",
+            "    body: $0",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 404. The server has not found anything matching the request URI"
+    },
+    "RAML Response 405": {
+        "prefix": "405",
+        "scope": "raml",
+        "body": [
+            "  405:",
+            "    description: The method specified in the request is not allowed",
+            "    body: $0",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 405. The method specified in the request is not allowed"
+    },
+    "RAML Response 406": {
+        "prefix": "406",
+        "scope": "raml",
+        "body": [
+            "  406:",
+            "    description: The request contains parameters that are not acceptable",
+            "    body: $0",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 406. The request contains parameters that are not acceptable"
+    },
+    "RAML Response 415": {
+        "prefix": "415",
+        "scope": "raml",
+        "body": [
+            "    body: $0",
+            "    description: The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method",
+            "    body:",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 415. The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method"
+    },
+    "RAML Response 500": {
+        "prefix": "500",
+        "scope": "raml",
+        "body": [
+            "  500:",
+            "    description: The server encountered an unexpected condition which prevented it from fulfilling the request",
+            "    body: $0",
+            "      type: ErrorSchema"
+        ],
+        "description": "Response 500. The server encountered an unexpected condition which prevented it from fulfilling the request"
+    },
+    "RAML Security":{
+        "prefix": "security",
+        "body":[
+        "  securedBy: [ oauth_2_0, oauth_1_0 ]",
+        "  securitySchemes:",
+        "    oauth_2_0: !include ${1:path} ",
+        "    oauth_1_0: !include ${2:path}"
+        ]
+    },
+    "RAML include":{
+        "prefix": "include",
+        "body":[
+           "!include ${1:path}"
+        ]
     }
 }
