@@ -31,7 +31,7 @@
         "            example: |",
         "$0"
         ],
-        "description": "Creates an End Point with variable methods. 200 and 404 responses included"
+        "description": "Creates an Endpoint with variable methods. 200 and 404 responses included"
     },
     "RAML Method POST": {
         "prefix": "post",
@@ -216,6 +216,85 @@
         "prefix": "include",
         "body":[
            "!include ${1:path}"
+        ]
+    },
+    "RAML baseuri:string":{
+        "prefix": "baseuri:string",
+        "body":[
+        "  baseUriParameters:",
+        "    ${1:base uri param name}:",
+        "      description: ${2:description}",
+        "      default: ${3:default}",
+        "      example: ${4:example}",
+        "      type: string}",
+        "      minLength: ${6:minLength}",
+        "      maxLength: ${7:maxLength}",
+        "      pattern: ${8:pattern}"
+        ]
+    },
+    "RAML baseuri:object":{
+        "prefix": "baseuri:object",
+        "body":[
+        "    baseUriParameters:",
+        "      newBaseUriParameter:",
+        "        description: Property description",
+        "        type: object"
+        ]
+    },
+    "RAML baseuri:number":{
+        "prefix": "baseuri:number",
+        "body":[
+        "   baseUriParameters:",
+        "     newBaseUriParameter:",
+        "       description: ${1:description}",
+        "       default: ",
+        "       example: ",
+        "       type: number",
+        "       minimum: ",
+        "       multipleOf: ",
+        "       format: ${2|int,long,float,double,int8,int16,int32,int64|}"
+        ]
+    },
+    "RAML baseuri:boolean":{
+        "prefix": "baseuri:boolean",
+        "body":[
+        "   baseUriParameters:",
+        "     newBaseUriParameter:",
+        "       description: ${1:description}",
+        "       default: true",
+        "       example: true",
+        "       type: boolean"
+        ]
+    },
+    "RAML baseuri:datetime":{
+        "prefix": "baseuri:datetime",
+        "body":[
+        "   baseUriParameters:",
+        "     newBaseUriParameter:",
+        "       description: ${1:description}",
+        "       example: rfc3339/2019-03-12T09:46:48.000Z | rfc2616/Tue, 12 Mar 2019 09:46:48 GMT",
+        "       type: datetime",
+        "       format: ${2|rfc3339,rfc2616|}"
+        ]
+    },
+    "RAML baseuri:file":{
+        "prefix": "baseuri:file",
+        "body":[
+        "   baseUriParameters:",
+        "     newBaseUriParameter:",
+        "       description: ${1:description}",
+        "       minLength: 1",
+        "       maxLength: 1",
+        "       fileTypes: "
+        ]
+    },
+    "RAML baseuri:nil":{
+        "prefix": "baseuri:nil",
+        "body":[
+        "   baseUriParameters:",
+        "     newBaseUriParameter:",
+        "       description: ${1:description}",
+        "       type: nil"
         ]
     }
 }

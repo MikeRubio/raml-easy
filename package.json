@@ -1,16 +1,20 @@
 {
     "name": "raml-easy",
     "displayName": "RAML easy",
-    "description": "An easy way to raml",
-    "author": "Miguel Angel Rubuo Jimenez",
+    "description": "An easy way to RAML",
+    "author": {
+        "name": "Miguel Angel Rubio"
+    },
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "publisher": "MiguelRubioJimenez",
     "repository": {
         "type": "git",
         "url": "https://github.com/MikeRubio/raml-easy"
     },
     "icon": "raml.png",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "engines": {
-        "vscode": "^1.29.0"
+        "vscode": "^1.20.0"
     },
     "categories": [
         "Snippets"
